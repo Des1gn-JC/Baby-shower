@@ -33,9 +33,7 @@
             position: relative;
             background-color: #f7f3eb;
             background-image: 
-                /* Textura de papel */
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"),
-                /* Luces suaves */
                 radial-gradient(circle at 12% 18%, rgba(255,255,255,0.65) 0%, transparent 28%),
                 radial-gradient(circle at 88% 12%, rgba(255,255,255,0.5) 0%, transparent 22%);
             overflow: hidden;
@@ -51,7 +49,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== BANDERINES MÁS GRANDES + ANIMACIÓN LEVE ===== */
+        /* Banderines más animados */
         .banderines {
             position: absolute;
             top: 0;
@@ -61,38 +59,39 @@
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 50'%3E%3Cpolygon points='0,0 28,0 14,42' fill='%23c8e4f2'/%3E%3Cpolygon points='28,0 56,0 42,42' fill='%23f0e6d8'/%3E%3Cpolygon points='56,0 84,0 70,42' fill='%23a8d4e8'/%3E%3Cpolygon points='84,0 112,0 98,42' fill='%23e8d9c8'/%3E%3Cpolygon points='112,0 140,0 126,42' fill='%23b8d9e8'/%3E%3C/svg%3E") repeat-x;
             background-size: 140px 50px;
             opacity: 0.95;
-            animation: moverBanderines 8s ease-in-out infinite;
+            animation: moverBanderines 5s ease-in-out infinite;
             transform-origin: top center;
         }
 
         @keyframes moverBanderines {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(0.6deg); }
+            0%, 100% { transform: rotate(0deg) translateY(0); }
+            25% { transform: rotate(1.2deg) translateY(2px); }
+            75% { transform: rotate(-1.2deg) translateY(1px); }
         }
 
-        /* ===== ESTRELLAS DE LÍNEA SEMI-TRANSPARENTES ===== */
+        /* Estrellas más visibles */
         .estrella-linea {
             position: absolute;
-            color: #a8c4d4;
-            opacity: 0.35;
-            font-size: 14px;
+            color: #8bb8cc;
+            opacity: 0.55;
+            font-size: 16px;
             pointer-events: none;
-            animation: parpadeoEstrella 5s ease-in-out infinite;
+            animation: parpadeoEstrella 4s ease-in-out infinite;
         }
 
-        .estrella-linea:nth-child(1) { top: 18%; left: 8%; animation-delay: 0s; }
-        .estrella-linea:nth-child(2) { top: 25%; right: 11%; animation-delay: 1.2s; font-size: 12px; }
-        .estrella-linea:nth-child(3) { top: 42%; left: 5%; animation-delay: 2.1s; font-size: 11px; }
-        .estrella-linea:nth-child(4) { top: 55%; right: 7%; animation-delay: 0.7s; }
-        .estrella-linea:nth-child(5) { top: 68%; left: 12%; animation-delay: 3s; font-size: 13px; }
-        .estrella-linea:nth-child(6) { top: 78%; right: 14%; animation-delay: 1.8s; font-size: 10px; }
+        .estrella-linea:nth-child(1) { top: 16%; left: 7%; animation-delay: 0s; }
+        .estrella-linea:nth-child(2) { top: 23%; right: 9%; animation-delay: 1s; font-size: 14px; }
+        .estrella-linea:nth-child(3) { top: 40%; left: 5%; animation-delay: 2s; font-size: 13px; }
+        .estrella-linea:nth-child(4) { top: 52%; right: 6%; animation-delay: 0.6s; }
+        .estrella-linea:nth-child(5) { top: 65%; left: 11%; animation-delay: 2.5s; font-size: 15px; }
+        .estrella-linea:nth-child(6) { top: 76%; right: 12%; animation-delay: 1.5s; font-size: 12px; }
 
         @keyframes parpadeoEstrella {
-            0%, 100% { opacity: 0.25; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.15); }
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.2); }
         }
 
-        /* ===== BEBÉ EN GLOBO ===== */
+        /* Bebé en globo */
         .bebe-globo {
             position: absolute;
             right: 3%;
@@ -103,20 +102,14 @@
         }
 
         @keyframes subirGlobo {
-            0% {
-                transform: translateY(110vh) scale(0.7);
-                opacity: 0;
-            }
+            0% { transform: translateY(110vh) scale(0.7); opacity: 0; }
             10% { opacity: 1; }
             30% { transform: translateY(8vh) scale(1); }
             55% { transform: translateY(8vh) scale(1); }
-            100% {
-                transform: translateY(-30vh) scale(1.05);
-                opacity: 0;
-            }
+            100% { transform: translateY(-30vh) scale(1.05); opacity: 0; }
         }
 
-        /* ===== AVIÓN ===== */
+        /* Avión */
         .avion {
             position: absolute;
             top: 75px;
@@ -132,48 +125,27 @@
             50% { transform: translateY(-12px) rotate(4deg); }
         }
 
-        /* Nubes */
-        .nube {
-            position: absolute;
-            bottom: 15px;
-            font-size: 55px;
-            opacity: 0.4;
-            animation: mover-nube 22s linear infinite;
-        }
-
-        .nube1 { left: -25px; }
-        .nube2 { right: -30px; bottom: 55px; font-size: 45px; animation-duration: 28s; animation-direction: reverse; }
-
-        @keyframes mover-nube {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(30px); }
-            100% { transform: translateX(0); }
-        }
-
-        /* ===== TEXTOS ===== */
-        .titulo-modo {
+        /* ===== ESTILOS COMUNES ===== */
+        .titulo-modo, .titulo-activandose, .titulo-bienvenido {
             font-family: 'Comic Neue', cursive;
-            font-size: 27px;
             color: #6eb5d0;
-            letter-spacing: 3px;
-            margin-bottom: 6px;
             font-weight: 700;
         }
 
-        .letras-bebe {
+        .titulo-modo { font-size: 27px; letter-spacing: 3px; margin-bottom: 6px; }
+        .titulo-activandose { font-size: 22px; letter-spacing: 2px; margin-bottom: 14px; }
+        .titulo-bienvenido { font-size: 23px; letter-spacing: 2px; margin-bottom: 8px; }
+
+        .letras-bebe, .letras-andre {
             display: flex;
-            gap: 8px;
+            gap: 7px;
             justify-content: center;
-            margin: 8px 0 10px;
         }
 
-        .letra {
+        .letra, .letra-andre {
             color: white;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
-            font-size: 28px;
-            width: 47px;
-            height: 53px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -182,23 +154,32 @@
             animation: reboteLetra 2.6s ease-in-out infinite;
         }
 
-        .letra:nth-child(1) { background: #7ec8e3; animation-delay: 0s; }
+        .letra {
+            font-size: 28px;
+            width: 47px;
+            height: 53px;
+        }
+
+        .letra:nth-child(1) { background: #7ec8e3; }
         .letra:nth-child(2) { background: #89d0e8; animation-delay: 0.12s; }
         .letra:nth-child(3) { background: #6eb5d0; animation-delay: 0.24s; }
         .letra:nth-child(4) { background: #5aa9c7; animation-delay: 0.36s; }
 
+        .letra-andre {
+            font-size: 25px;
+            width: 43px;
+            height: 49px;
+        }
+
+        .letra-andre:nth-child(1) { background: #f7b267; }
+        .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }
+        .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }
+        .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }
+        .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }
+
         @keyframes reboteLetra {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-7px); }
-        }
-
-        .titulo-activandose {
-            font-family: 'Comic Neue', cursive;
-            font-size: 22px;
-            color: #6eb5d0;
-            letter-spacing: 2px;
-            margin-bottom: 14px;
-            font-weight: 700;
         }
 
         .osito {
@@ -207,43 +188,6 @@
             margin: 6px 0 14px;
             filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
         }
-
-        .titulo-bienvenido {
-            font-family: 'Comic Neue', cursive;
-            font-size: 23px;
-            color: #6eb5d0;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .letras-andre {
-            display: flex;
-            gap: 7px;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .letra-andre {
-            color: white;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 25px;
-            width: 43px;
-            height: 49px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 11px;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.12);
-            animation: reboteLetra 2.8s ease-in-out infinite;
-        }
-
-        .letra-andre:nth-child(1) { background: #f7b267; animation-delay: 0s; }
-        .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }
-        .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }
-        .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }
-        .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }
 
         .frase-especial {
             font-size: 14.5px;
@@ -274,44 +218,142 @@
             background: #5aa9c7;
         }
 
-        /* Pantallas 2 y 3 */
-        .nombre-bebe {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            color: #6d98b1;
-            margin: 12px 0 6px;
-            font-weight: 600;
-        }
-
-        .baby-shower-texto {
-            font-size: 19px;
-            color: #a99578;
+        /* ========== PANTALLA 2 - ESTILOS ESPECÍFICOS ========== */
+        .baby-texto {
+            font-family: 'Comic Neue', cursive;
+            font-size: 32px;
+            color: #6eb5d0;
+            font-weight: 700;
             letter-spacing: 3px;
-            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: subirTexto 0.8s ease forwards;
         }
 
-        .padres {
-            font-size: 16.5px;
-            line-height: 1.7;
-            margin-bottom: 24px;
+        .shower-texto {
+            font-family: 'Comic Neue', cursive;
+            font-size: 28px;
+            color: #5aa9c7;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: subirTexto 0.8s ease 0.4s forwards;
         }
 
-        .datos {
-            background: rgba(255,255,255,0.78);
-            border-radius: 18px;
-            padding: 22px 26px;
-            width: 100%;
-            max-width: 340px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            border: 1px solid #ebe4da;
-            margin-bottom: 26px;
+        @keyframes subirTexto {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .dato {
+        .andre-entrada {
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: bajarAndre 0.9s ease 0.9s forwards;
+            margin-bottom: 18px;
+        }
+
+        @keyframes bajarAndre {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .texto-felices {
+            font-size: 15.5px;
+            color: #8a8075;
+            max-width: 300px;
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        .mis-papis {
+            font-family: 'Comic Neue', cursive;
+            font-size: 18px;
+            color: #6eb5d0;
+            letter-spacing: 2px;
+            margin: 12px 0 6px;
+            font-weight: 700;
+        }
+
+        .nombre-papa {
+            font-size: 17px;
+            font-weight: 700;
+            color: #5e574e;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .y-texto {
+            font-size: 15px;
+            color: #a09488;
+            margin: 4px 0;
+        }
+
+        .nombre-mama {
+            font-size: 17px;
+            font-weight: 700;
+            color: #6eb5d0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .guarda-dia {
+            font-size: 14.5px;
+            color: #8a8075;
+            max-width: 310px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            font-style: italic;
+        }
+
+        .fecha-bonita {
+            font-family: 'Comic Neue', cursive;
+            font-size: 20px;
+            color: #5e574e;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            animation: pulsoSuave 3s ease-in-out infinite;
+        }
+
+        .hora-label {
+            font-family: 'Comic Neue', cursive;
             font-size: 16px;
-            margin: 10px 0;
+            color: #6eb5d0;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
+        .hora-valor {
+            font-family: 'Comic Neue', cursive;
+            font-size: 26px;
+            color: #5aa9c7;
+            font-weight: 700;
+            margin-bottom: 28px;
+            animation: pulsoSuave 3s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes pulsoSuave {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .flecha-atras {
+            margin-top: 30px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #a09488;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flecha-atras:hover {
+            color: #6eb5d0;
+            transform: translateX(-4px);
+        }
+
+        /* Pantalla 3 */
         .titulo-seccion {
             font-family: 'Playfair Display', serif;
             font-size: 27px;
@@ -377,26 +419,15 @@
             background: #88b89a;
         }
 
-        .atras {
-            margin-top: 22px;
-            border: none;
-            background: transparent;
-            color: #a09488;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
         @media (max-width: 480px) {
             .osito { width: 200px; }
             .letra { width: 40px; height: 46px; font-size: 23px; }
             .letra-andre { width: 37px; height: 43px; font-size: 21px; }
             .titulo-modo { font-size: 23px; }
-            .titulo-activandose { font-size: 19px; }
-            .titulo-bienvenido { font-size: 20px; }
-            .bebe-globo { width: 75px; right: 2%; }
-            .avion { width: 55px; top: 70px; }
-            .frase-especial { font-size: 13.5px; }
-            .banderines { height: 58px; background-size: 120px 42px; }
+            .baby-texto { font-size: 28px; }
+            .shower-texto { font-size: 24px; }
+            .bebe-globo { width: 75px; }
+            .avion { width: 55px; }
         }
     </style>
 </head>
@@ -405,8 +436,6 @@
 <!-- ===================== PANTALLA 1 ===================== -->
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
-
-    <!-- Estrellas de línea -->
     <div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div>
@@ -414,28 +443,21 @@
     <div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div>
 
-    <!-- Avión -->
     <img src="images/avion.png" alt="Avión" class="avion">
-
-    <!-- Bebé en globo -->
     <img src="images/bebe-globo.png" alt="Bebé en globo" class="bebe-globo">
 
     <div class="titulo-modo">¡MODO</div>
-
     <div class="letras-bebe">
         <div class="letra">B</div>
         <div class="letra">E</div>
         <div class="letra">B</div>
         <div class="letra">É</div>
     </div>
-
     <div class="titulo-activandose">ACTIVÁNDOSE!</div>
 
-    <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" 
-         alt="Osito" class="osito">
+    <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" class="osito" alt="Osito">
 
     <div class="titulo-bienvenido">¡BIENVENIDO</div>
-
     <div class="letras-andre">
         <div class="letra-andre">A</div>
         <div class="letra-andre">N</div>
@@ -461,29 +483,43 @@
     <div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div>
 
-    <p style="font-size: 15.5px; color: #8a8075; max-width: 290px; line-height: 1.55; margin: 30px 0 20px;">
+    <div class="baby-texto">BABY</div>
+    <div class="shower-texto">SHOWER</div>
+
+    <div class="andre-entrada">
+        <div class="letras-andre">
+            <div class="letra-andre">A</div>
+            <div class="letra-andre">N</div>
+            <div class="letra-andre">D</div>
+            <div class="letra-andre">R</div>
+            <div class="letra-andre">É</div>
+        </div>
+    </div>
+
+    <p class="texto-felices">
         Estamos muy felices de compartir<br>
         este momento tan importante<br>
         con ustedes.
     </p>
 
-    <h2 class="nombre-bebe">André</h2>
-    <div class="baby-shower-texto">BABY SHOWER</div>
+    <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" class="osito" alt="Osito">
 
-    <div class="padres">
-        👨‍👩‍👧<br>
-        <strong>Jersson Castilla Veliz</strong><br>
-        y<br>
-        <strong>Lucero Pizarro Medina</strong>
-    </div>
+    <div class="mis-papis">MIS PAPIS</div>
+    <div class="nombre-papa">JERSSON CASTILLA VELIZ</div>
+    <div class="y-texto">Y</div>
+    <div class="nombre-mama">LUCERO PIZARRO MEDINA</div>
 
-    <div class="datos">
-        <div class="dato">📅 <strong>29 de agosto de 2026</strong></div>
-        <div class="dato">🕐 <strong>10:30 a. m.</strong></div>
-    </div>
+    <p class="guarda-dia">
+        Guarda este día muy bien en tu corazón y en tu agenda.<br>
+        Te esperamos:
+    </p>
+
+    <div class="fecha-bonita">29 DE AGOSTO DEL 2026</div>
+    <div class="hora-label">HORA</div>
+    <div class="hora-valor">6:00 PM</div>
 
     <button class="boton" onclick="mostrarPantalla(3)">CONTINUAR →</button>
-    <button class="atras" onclick="mostrarPantalla(1)">← Volver</button>
+    <button class="flecha-atras" onclick="mostrarPantalla(1)">←</button>
 </section>
 
 <!-- ===================== PANTALLA 3 ===================== -->
@@ -524,7 +560,6 @@
         <a class="boton-secundario" href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw" target="_blank">
             📍 VER UBICACIÓN
         </a>
-        
         <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
             💬 CONFIRMAR CON PAPÁ
         </a>
@@ -533,39 +568,45 @@
         </a>
     </div>
 
-    <button class="atras" onclick="mostrarPantalla(2)">← Volver</button>
+    <button class="flecha-atras" onclick="mostrarPantalla(2)">←</button>
 </section>
+
+<!-- Audio -->
+<audio id="musica" loop>
+    <source src="images/musica.mp3" type="audio/mpeg">
+</audio>
 
 <script>
     function mostrarPantalla(numero) {
         document.querySelectorAll(".pantalla").forEach(p => p.classList.remove("activa"));
         document.getElementById("pantalla" + numero).classList.add("activa");
         window.scrollTo(0, 0);
+
+        // Reproducir música solo en pantalla 2
+        const audio = document.getElementById("musica");
+        if (numero === 2) {
+            audio.play().catch(() => {
+                // Si el navegador bloquea el autoplay, el usuario puede tocarlo
+            });
+        }
     }
 
-    const fechaEvento = new Date("August 29, 2026 10:30:00").getTime();
+    // Cuenta regresiva
+    const fechaEvento = new Date("August 29, 2026 18:00:00").getTime(); // 6:00 PM
     
     setInterval(function() {
         const ahora = new Date().getTime();
         const diferencia = fechaEvento - ahora;
 
         if (diferencia <= 0) {
-            document.getElementById("dias").innerText = "0";
-            document.getElementById("horas").innerText = "0";
-            document.getElementById("minutos").innerText = "0";
-            document.getElementById("segundos").innerText = "0";
+            ["dias","horas","minutos","segundos"].forEach(id => document.getElementById(id).innerText = "0");
             return;
         }
 
-        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-        document.getElementById("dias").innerText = dias;
-        document.getElementById("horas").innerText = horas;
-        document.getElementById("minutos").innerText = minutos;
-        document.getElementById("segundos").innerText = segundos;
+        document.getElementById("dias").innerText = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        document.getElementById("horas").innerText = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutos").innerText = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("segundos").innerText = Math.floor((diferencia % (1000 * 60)) / 1000);
     }, 1000);
 </script>
 </body>
