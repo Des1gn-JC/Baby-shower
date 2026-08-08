@@ -29,7 +29,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px 50px;
             position: relative;
             background-color: #f7f3eb;
             background-image: 
@@ -61,74 +61,80 @@
             opacity: 0.9;
         }
 
-        /* ===== GLOBOS CELESTE ===== */
+        /* ===== GLOBOS MÁS GRANDES Y ANIMADOS ===== */
         .globo-decoracion {
             position: absolute;
-            font-size: 52px;
+            font-size: 68px;
             z-index: 2;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-            animation: globoSube 12s ease-in-out infinite;
+            filter: drop-shadow(0 6px 8px rgba(0,0,0,0.12));
+            animation: globoSube 11s ease-in-out infinite;
         }
 
         .globo1 {
-            left: 6%;
+            left: 4%;
             animation-delay: 0s;
         }
 
         .globo2 {
-            right: 7%;
-            font-size: 60px;
-            animation-delay: 2s;
+            right: 5%;
+            font-size: 78px;
+            animation-delay: 1.8s;
         }
 
         .globo3 {
-            left: 18%;
-            font-size: 44px;
-            animation-delay: 4s;
+            left: 15%;
+            font-size: 58px;
+            animation-delay: 3.5s;
+        }
+
+        .globo4 {
+            right: 16%;
+            font-size: 52px;
+            animation-delay: 5s;
         }
 
         @keyframes globoSube {
             0% {
-                transform: translateY(110vh) scale(0.8);
+                transform: translateY(120vh) scale(0.7);
                 opacity: 0;
             }
-            15% {
+            12% {
                 opacity: 1;
             }
-            40% {
-                transform: translateY(8vh) scale(1);
+            35% {
+                transform: translateY(6vh) scale(1);
             }
             55% {
-                transform: translateY(8vh) scale(1); /* se queda 5 segundos aprox */
+                transform: translateY(6vh) scale(1); /* se queda arriba */
             }
             100% {
-                transform: translateY(-20vh) scale(1.05);
-                opacity: 0.7;
+                transform: translateY(-25vh) scale(1.1);
+                opacity: 0;
             }
         }
 
-        /* Nubes suaves */
+        /* Nubes */
         .nube {
             position: absolute;
-            bottom: 20px;
-            font-size: 60px;
-            opacity: 0.55;
-            animation: mover-nube 20s linear infinite;
+            bottom: 15px;
+            font-size: 55px;
+            opacity: 0.5;
+            animation: mover-nube 22s linear infinite;
         }
 
-        .nube1 { left: -30px; }
-        .nube2 { right: -40px; bottom: 60px; font-size: 50px; animation-duration: 26s; animation-direction: reverse; }
+        .nube1 { left: -25px; }
+        .nube2 { right: -30px; bottom: 55px; font-size: 45px; animation-duration: 28s; animation-direction: reverse; }
 
         @keyframes mover-nube {
             0% { transform: translateX(0); }
-            50% { transform: translateX(25px); }
+            50% { transform: translateX(30px); }
             100% { transform: translateX(0); }
         }
 
-        /* ===== PANTALLA 1 - TEXTOS ===== */
+        /* ===== TEXTOS PORTADA ===== */
         .titulo-modo {
             font-family: 'Comic Neue', cursive;
-            font-size: 28px;
+            font-size: 27px;
             color: #6eb5d0;
             letter-spacing: 3px;
             margin-bottom: 6px;
@@ -139,67 +145,99 @@
             display: flex;
             gap: 8px;
             justify-content: center;
-            margin: 10px 0 12px;
+            margin: 8px 0 10px;
         }
 
         .letra {
             color: white;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
-            font-size: 29px;
-            width: 48px;
-            height: 54px;
+            font-size: 28px;
+            width: 47px;
+            height: 53px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-            animation: reboteLetra 2.8s ease-in-out infinite;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+            animation: reboteLetra 2.6s ease-in-out infinite;
         }
 
         .letra:nth-child(1) { background: #7ec8e3; animation-delay: 0s; }
-        .letra:nth-child(2) { background: #89d0e8; animation-delay: 0.15s; }
-        .letra:nth-child(3) { background: #6eb5d0; animation-delay: 0.3s; }
-        .letra:nth-child(4) { background: #5aa9c7; animation-delay: 0.45s; }
+        .letra:nth-child(2) { background: #89d0e8; animation-delay: 0.12s; }
+        .letra:nth-child(3) { background: #6eb5d0; animation-delay: 0.24s; }
+        .letra:nth-child(4) { background: #5aa9c7; animation-delay: 0.36s; }
 
         @keyframes reboteLetra {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-7px); }
         }
 
         .titulo-activandose {
             font-family: 'Comic Neue', cursive;
-            font-size: 23px;
+            font-size: 22px;
             color: #6eb5d0;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
             font-weight: 700;
         }
 
         /* Osito */
         .osito {
-            width: 260px;
-            max-width: 75%;
-            margin: 8px 0 18px;
+            width: 250px;
+            max-width: 72%;
+            margin: 6px 0 16px;
             filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
         }
 
-        .texto-bienvenida {
-            font-size: 15.5px;
-            color: #8a8075;
-            max-width: 290px;
-            line-height: 1.55;
-            margin-bottom: 28px;
+        /* ¡BIENVENIDO + ANDRÉ */
+        .titulo-bienvenido {
+            font-family: 'Comic Neue', cursive;
+            font-size: 24px;
+            color: #6eb5d0;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
+
+        .letras-andre {
+            display: flex;
+            gap: 7px;
+            justify-content: center;
+            margin-bottom: 26px;
+        }
+
+        .letra-andre {
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 26px;
+            width: 44px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+            animation: reboteLetra 2.8s ease-in-out infinite;
+        }
+
+        .letra-andre:nth-child(1) { background: #f7b267; animation-delay: 0s; }      /* naranja suave */
+        .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }     /* celeste */
+        .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }     /* verde menta */
+        .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }     /* rosa suave */
+        .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }     /* azul */
 
         .boton {
             background: #6eb5d0;
             color: white;
             border: none;
-            padding: 14px 34px;
+            padding: 15px 36px;
             border-radius: 50px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
+            font-family: 'Comic Neue', cursive;
+            letter-spacing: 1px;
             cursor: pointer;
             box-shadow: 0 6px 18px rgba(110, 181, 208, 0.4);
             transition: all 0.3s ease;
@@ -210,14 +248,7 @@
             background: #5aa9c7;
         }
 
-        .dale-click {
-            margin-top: 11px;
-            font-size: 12.5px;
-            color: #a09488;
-            letter-spacing: 1px;
-        }
-
-        /* ===== PANTALLA 2 y 3 (igual que antes) ===== */
+        /* ===== PANTALLA 2 y 3 ===== */
         .nombre-bebe {
             font-family: 'Playfair Display', serif;
             font-size: 48px;
@@ -330,12 +361,14 @@
         }
 
         @media (max-width: 480px) {
-            .osito { width: 220px; }
-            .letra { width: 42px; height: 48px; font-size: 25px; }
-            .titulo-modo { font-size: 24px; }
-            .titulo-activandose { font-size: 20px; }
-            .globo-decoracion { font-size: 42px; }
-            .globo2 { font-size: 50px; }
+            .osito { width: 210px; }
+            .letra { width: 41px; height: 47px; font-size: 24px; }
+            .letra-andre { width: 38px; height: 44px; font-size: 22px; }
+            .titulo-modo { font-size: 23px; }
+            .titulo-activandose { font-size: 19px; }
+            .titulo-bienvenido { font-size: 21px; }
+            .globo-decoracion { font-size: 54px; }
+            .globo2 { font-size: 64px; }
         }
     </style>
 </head>
@@ -345,12 +378,13 @@
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
 
-    <!-- Globos celeste -->
+    <!-- Globos grandes -->
     <div class="globo-decoracion globo1">🎈</div>
     <div class="globo-decoracion globo2">🎈</div>
     <div class="globo-decoracion globo3">🎈</div>
+    <div class="globo-decoracion globo4">🎈</div>
 
-    <!-- TEXTOS -->
+    <!-- TEXTOS SUPERIORES -->
     <div class="titulo-modo">¡MODO</div>
 
     <div class="letras-bebe">
@@ -367,26 +401,27 @@
          alt="Osito" 
          class="osito">
 
-    <p class="texto-bienvenida">
-        Estamos muy felices de compartir<br>
-        este momento tan importante con ustedes
-    </p>
+    <!-- ¡BIENVENIDO + ANDRÉ -->
+    <div class="titulo-bienvenido">¡BIENVENIDO</div>
+
+    <div class="letras-andre">
+        <div class="letra-andre">A</div>
+        <div class="letra-andre">N</div>
+        <div class="letra-andre">D</div>
+        <div class="letra-andre">R</div>
+        <div class="letra-andre">É</div>
+    </div>
 
     <button class="boton" onclick="mostrarPantalla(2)">
         ✉️ VER INVITACIÓN
     </button>
-    <div class="dale-click">¡DALE CLICK!</div>
-
-    <!-- Nubes -->
-    <div class="nube nube1">☁️</div>
-    <div class="nube nube2">☁️</div>
 </section>
 
 <!-- ===================== PANTALLA 2 ===================== -->
 <section id="pantalla2" class="pantalla">
     <div class="banderines"></div>
 
-    <p class="texto-bienvenida" style="margin-top: 30px;">
+    <p style="font-size: 15.5px; color: #8a8075; max-width: 290px; line-height: 1.55; margin: 30px 0 20px;">
         Estamos muy felices de compartir<br>
         este momento tan importante<br>
         con ustedes.
