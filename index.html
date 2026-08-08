@@ -49,7 +49,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Banderines más animados */
+        /* Banderines */
         .banderines {
             position: absolute;
             top: 0;
@@ -69,29 +69,39 @@
             75% { transform: rotate(-1.2deg) translateY(1px); }
         }
 
-        /* Estrellas más visibles */
+        /* MUCHAS ESTRELLAS */
         .estrella-linea {
             position: absolute;
             color: #8bb8cc;
             opacity: 0.55;
-            font-size: 16px;
+            font-size: 15px;
             pointer-events: none;
             animation: parpadeoEstrella 4s ease-in-out infinite;
         }
 
-        .estrella-linea:nth-child(1) { top: 16%; left: 7%; animation-delay: 0s; }
-        .estrella-linea:nth-child(2) { top: 23%; right: 9%; animation-delay: 1s; font-size: 14px; }
-        .estrella-linea:nth-child(3) { top: 40%; left: 5%; animation-delay: 2s; font-size: 13px; }
-        .estrella-linea:nth-child(4) { top: 52%; right: 6%; animation-delay: 0.6s; }
-        .estrella-linea:nth-child(5) { top: 65%; left: 11%; animation-delay: 2.5s; font-size: 15px; }
-        .estrella-linea:nth-child(6) { top: 76%; right: 12%; animation-delay: 1.5s; font-size: 12px; }
+        /* Posiciones de estrellas por todos lados */
+        .estrella-linea:nth-child(1)  { top: 12%; left: 6%;  animation-delay: 0s; }
+        .estrella-linea:nth-child(2)  { top: 18%; right: 8%; animation-delay: 0.8s; font-size: 13px; }
+        .estrella-linea:nth-child(3)  { top: 28%; left: 4%;  animation-delay: 1.5s; }
+        .estrella-linea:nth-child(4)  { top: 35%; right: 5%; animation-delay: 0.4s; font-size: 14px; }
+        .estrella-linea:nth-child(5)  { top: 45%; left: 9%;  animation-delay: 2.2s; }
+        .estrella-linea:nth-child(6)  { top: 52%; right: 11%; animation-delay: 1.1s; font-size: 12px; }
+        .estrella-linea:nth-child(7)  { top: 62%; left: 7%;  animation-delay: 2.8s; }
+        .estrella-linea:nth-child(8)  { top: 70%; right: 9%; animation-delay: 0.6s; font-size: 14px; }
+        .estrella-linea:nth-child(9)  { top: 22%; left: 22%; animation-delay: 1.8s; font-size: 11px; }
+        .estrella-linea:nth-child(10) { top: 38%; right: 20%; animation-delay: 2.5s; }
+        .estrella-linea:nth-child(11) { top: 58%; left: 18%; animation-delay: 0.3s; font-size: 13px; }
+        .estrella-linea:nth-child(12) { top: 75%; right: 18%; animation-delay: 1.9s; }
+        .estrella-linea:nth-child(13) { top: 15%; left: 40%; animation-delay: 2.1s; font-size: 12px; }
+        .estrella-linea:nth-child(14) { top: 48%; left: 42%; animation-delay: 0.9s; }
+        .estrella-linea:nth-child(15) { top: 80%; left: 35%; animation-delay: 1.4s; font-size: 14px; }
 
         @keyframes parpadeoEstrella {
             0%, 100% { opacity: 0.35; transform: scale(1); }
-            50% { opacity: 0.75; transform: scale(1.2); }
+            50% { opacity: 0.8; transform: scale(1.2); }
         }
 
-        /* Bebé en globo */
+        /* Bebé en globo y avión */
         .bebe-globo {
             position: absolute;
             right: 3%;
@@ -109,7 +119,6 @@
             100% { transform: translateY(-30vh) scale(1.05); opacity: 0; }
         }
 
-        /* Avión */
         .avion {
             position: absolute;
             top: 75px;
@@ -125,7 +134,7 @@
             50% { transform: translateY(-12px) rotate(4deg); }
         }
 
-        /* ===== ESTILOS COMUNES ===== */
+        /* Textos comunes */
         .titulo-modo, .titulo-activandose, .titulo-bienvenido {
             font-family: 'Comic Neue', cursive;
             color: #6eb5d0;
@@ -154,23 +163,13 @@
             animation: reboteLetra 2.6s ease-in-out infinite;
         }
 
-        .letra {
-            font-size: 28px;
-            width: 47px;
-            height: 53px;
-        }
-
+        .letra { font-size: 28px; width: 47px; height: 53px; }
         .letra:nth-child(1) { background: #7ec8e3; }
         .letra:nth-child(2) { background: #89d0e8; animation-delay: 0.12s; }
         .letra:nth-child(3) { background: #6eb5d0; animation-delay: 0.24s; }
         .letra:nth-child(4) { background: #5aa9c7; animation-delay: 0.36s; }
 
-        .letra-andre {
-            font-size: 25px;
-            width: 43px;
-            height: 49px;
-        }
-
+        .letra-andre { font-size: 25px; width: 43px; height: 49px; }
         .letra-andre:nth-child(1) { background: #f7b267; }
         .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }
         .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }
@@ -183,9 +182,9 @@
         }
 
         .osito {
-            width: 240px;
-            max-width: 70%;
-            margin: 6px 0 14px;
+            width: 230px;
+            max-width: 68%;
+            margin: 10px 0 16px;
             filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
         }
 
@@ -218,13 +217,14 @@
             background: #5aa9c7;
         }
 
-        /* ========== PANTALLA 2 - ESTILOS ESPECÍFICOS ========== */
+        /* ========== PANTALLA 2 ========== */
         .baby-texto {
             font-family: 'Comic Neue', cursive;
             font-size: 32px;
             color: #6eb5d0;
             font-weight: 700;
             letter-spacing: 3px;
+            margin-top: 25px; /* baja para no chocar con banderines */
             opacity: 0;
             transform: translateY(40px);
             animation: subirTexto 0.8s ease forwards;
@@ -236,7 +236,7 @@
             color: #5aa9c7;
             font-weight: 700;
             letter-spacing: 4px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             opacity: 0;
             transform: translateY(40px);
             animation: subirTexto 0.8s ease 0.4s forwards;
@@ -250,7 +250,7 @@
             opacity: 0;
             transform: translateY(-30px);
             animation: bajarAndre 0.9s ease 0.9s forwards;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
         @keyframes bajarAndre {
@@ -258,26 +258,46 @@
         }
 
         .texto-felices {
-            font-size: 15.5px;
+            font-size: 15px;
             color: #8a8075;
             max-width: 300px;
             line-height: 1.55;
-            margin-bottom: 18px;
+            margin: 8px 0 18px;
         }
 
-        .mis-papis {
+        .mis-papitos {
             font-family: 'Comic Neue', cursive;
             font-size: 18px;
             color: #6eb5d0;
             letter-spacing: 2px;
-            margin: 12px 0 6px;
+            margin: 8px 0 12px;
             font-weight: 700;
         }
 
-        .nombre-papa {
-            font-size: 17px;
+        /* Formas tiernas para los nombres */
+        .forma-nombre {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 40px;
+            margin: 6px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: reboteLetra 3s ease-in-out infinite;
+        }
+
+        .forma-papa {
+            background: #7ec8e3; /* azul como la N */
+        }
+
+        .forma-mama {
+            background: #e8a0bf; /* rosado como la R */
+            animation-delay: 0.3s;
+        }
+
+        .nombre-dentro {
+            color: white;
+            font-family: 'Comic Neue', cursive;
+            font-size: 15px;
             font-weight: 700;
-            color: #5e574e;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -285,16 +305,7 @@
         .y-texto {
             font-size: 15px;
             color: #a09488;
-            margin: 4px 0;
-        }
-
-        .nombre-mama {
-            font-size: 17px;
-            font-weight: 700;
-            color: #6eb5d0;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+            margin: 6px 0;
         }
 
         .guarda-dia {
@@ -302,23 +313,23 @@
             color: #8a8075;
             max-width: 310px;
             line-height: 1.5;
-            margin-bottom: 14px;
+            margin: 18px 0 12px;
             font-style: italic;
         }
 
         .fecha-bonita {
-            font-family: 'Comic Neue', cursive;
-            font-size: 20px;
-            color: #5e574e;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            animation: pulsoSuave 3s ease-in-out infinite;
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            color: #5a7d8c;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
         .hora-label {
             font-family: 'Comic Neue', cursive;
-            font-size: 16px;
+            font-size: 15px;
             color: #6eb5d0;
             font-weight: 700;
             letter-spacing: 2px;
@@ -329,17 +340,11 @@
             font-size: 26px;
             color: #5aa9c7;
             font-weight: 700;
-            margin-bottom: 28px;
-            animation: pulsoSuave 3s ease-in-out infinite 0.5s;
-        }
-
-        @keyframes pulsoSuave {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            margin-bottom: 26px;
         }
 
         .flecha-atras {
-            margin-top: 30px;
+            margin-top: 28px;
             background: none;
             border: none;
             font-size: 28px;
@@ -420,14 +425,14 @@
         }
 
         @media (max-width: 480px) {
-            .osito { width: 200px; }
+            .osito { width: 195px; }
             .letra { width: 40px; height: 46px; font-size: 23px; }
             .letra-andre { width: 37px; height: 43px; font-size: 21px; }
-            .titulo-modo { font-size: 23px; }
-            .baby-texto { font-size: 28px; }
+            .baby-texto { font-size: 28px; margin-top: 20px; }
             .shower-texto { font-size: 24px; }
             .bebe-globo { width: 75px; }
             .avion { width: 55px; }
+            .nombre-dentro { font-size: 13.5px; }
         }
     </style>
 </head>
@@ -436,22 +441,19 @@
 <!-- ===================== PANTALLA 1 ===================== -->
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
+    <!-- Muchas estrellas -->
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
 
     <img src="images/avion.png" alt="Avión" class="avion">
     <img src="images/bebe-globo.png" alt="Bebé en globo" class="bebe-globo">
 
     <div class="titulo-modo">¡MODO</div>
     <div class="letras-bebe">
-        <div class="letra">B</div>
-        <div class="letra">E</div>
-        <div class="letra">B</div>
-        <div class="letra">É</div>
+        <div class="letra">B</div><div class="letra">E</div><div class="letra">B</div><div class="letra">É</div>
     </div>
     <div class="titulo-activandose">ACTIVÁNDOSE!</div>
 
@@ -459,11 +461,8 @@
 
     <div class="titulo-bienvenido">¡BIENVENIDO</div>
     <div class="letras-andre">
-        <div class="letra-andre">A</div>
-        <div class="letra-andre">N</div>
-        <div class="letra-andre">D</div>
-        <div class="letra-andre">R</div>
-        <div class="letra-andre">É</div>
+        <div class="letra-andre">A</div><div class="letra-andre">N</div><div class="letra-andre">D</div>
+        <div class="letra-andre">R</div><div class="letra-andre">É</div>
     </div>
 
     <p class="frase-especial">
@@ -471,30 +470,29 @@
         ¡Acompáñanos a celebrar la llegada de nuestro nuevo amor!
     </p>
 
-    <button class="boton" onclick="mostrarPantalla(2)">
-        ✉️ VER INVITACIÓN
-    </button>
+    <button class="boton" onclick="mostrarPantalla(2)">✉️ VER INVITACIÓN</button>
 </section>
 
 <!-- ===================== PANTALLA 2 ===================== -->
 <section id="pantalla2" class="pantalla">
     <div class="banderines"></div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
 
     <div class="baby-texto">BABY</div>
     <div class="shower-texto">SHOWER</div>
 
     <div class="andre-entrada">
         <div class="letras-andre">
-            <div class="letra-andre">A</div>
-            <div class="letra-andre">N</div>
-            <div class="letra-andre">D</div>
-            <div class="letra-andre">R</div>
-            <div class="letra-andre">É</div>
+            <div class="letra-andre">A</div><div class="letra-andre">N</div><div class="letra-andre">D</div>
+            <div class="letra-andre">R</div><div class="letra-andre">É</div>
         </div>
     </div>
+
+    <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" class="osito" alt="Osito">
 
     <p class="texto-felices">
         Estamos muy felices de compartir<br>
@@ -502,12 +500,17 @@
         con ustedes.
     </p>
 
-    <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" class="osito" alt="Osito">
+    <div class="mis-papitos">MIS PAPITOS</div>
 
-    <div class="mis-papis">MIS PAPIS</div>
-    <div class="nombre-papa">JERSSON CASTILLA VELIZ</div>
+    <div class="forma-nombre forma-papa">
+        <span class="nombre-dentro">JERSSON CASTILLA VELIZ</span>
+    </div>
+
     <div class="y-texto">Y</div>
-    <div class="nombre-mama">LUCERO PIZARRO MEDINA</div>
+
+    <div class="forma-nombre forma-mama">
+        <span class="nombre-dentro">LUCERO PIZARRO MEDINA</span>
+    </div>
 
     <p class="guarda-dia">
         Guarda este día muy bien en tu corazón y en tu agenda.<br>
@@ -525,29 +528,16 @@
 <!-- ===================== PANTALLA 3 ===================== -->
 <section id="pantalla3" class="pantalla">
     <div class="banderines"></div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
-    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
 
     <h2 class="titulo-seccion">¡Te esperamos! 🧸</h2>
 
     <div class="contador">
-        <div class="tiempo">
-            <span id="dias" class="numero">0</span>
-            <span class="texto-tiempo">DÍAS</span>
-        </div>
-        <div class="tiempo">
-            <span id="horas" class="numero">0</span>
-            <span class="texto-tiempo">HORAS</span>
-        </div>
-        <div class="tiempo">
-            <span id="minutos" class="numero">0</span>
-            <span class="texto-tiempo">MIN</span>
-        </div>
-        <div class="tiempo">
-            <span id="segundos" class="numero">0</span>
-            <span class="texto-tiempo">SEG</span>
-        </div>
+        <div class="tiempo"><span id="dias" class="numero">0</span><span class="texto-tiempo">DÍAS</span></div>
+        <div class="tiempo"><span id="horas" class="numero">0</span><span class="texto-tiempo">HORAS</span></div>
+        <div class="tiempo"><span id="minutos" class="numero">0</span><span class="texto-tiempo">MIN</span></div>
+        <div class="tiempo"><span id="segundos" class="numero">0</span><span class="texto-tiempo">SEG</span></div>
     </div>
 
     <h3 style="margin-bottom: 8px; color:#6d98b1;">📍 LUGAR</h3>
@@ -557,21 +547,14 @@
     </p>
 
     <div class="botones">
-        <a class="boton-secundario" href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw" target="_blank">
-            📍 VER UBICACIÓN
-        </a>
-        <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
-            💬 CONFIRMAR CON PAPÁ
-        </a>
-        <a class="boton-secundario whatsapp" href="https://wa.me/51YYYYYYYYY?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
-            💬 CONFIRMAR CON MAMÁ
-        </a>
+        <a class="boton-secundario" href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw" target="_blank">📍 VER UBICACIÓN</a>
+        <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">💬 CONFIRMAR CON PAPÁ</a>
+        <a class="boton-secundario whatsapp" href="https://wa.me/51YYYYYYYYY?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">💬 CONFIRMAR CON MAMÁ</a>
     </div>
 
     <button class="flecha-atras" onclick="mostrarPantalla(2)">←</button>
 </section>
 
-<!-- Audio -->
 <audio id="musica" loop>
     <source src="images/musica.mp3" type="audio/mpeg">
 </audio>
@@ -582,17 +565,13 @@
         document.getElementById("pantalla" + numero).classList.add("activa");
         window.scrollTo(0, 0);
 
-        // Reproducir música solo en pantalla 2
         const audio = document.getElementById("musica");
         if (numero === 2) {
-            audio.play().catch(() => {
-                // Si el navegador bloquea el autoplay, el usuario puede tocarlo
-            });
+            audio.play().catch(() => {});
         }
     }
 
-    // Cuenta regresiva
-    const fechaEvento = new Date("August 29, 2026 18:00:00").getTime(); // 6:00 PM
+    const fechaEvento = new Date("August 29, 2026 18:00:00").getTime();
     
     setInterval(function() {
         const ahora = new Date().getTime();
