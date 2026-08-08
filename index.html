@@ -33,9 +33,11 @@
             position: relative;
             background-color: #f7f3eb;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.7) 0%, transparent 25%),
-                radial-gradient(circle at 85% 15%, rgba(255,255,255,0.5) 0%, transparent 20%),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+                /* Textura de papel */
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"),
+                /* Luces suaves */
+                radial-gradient(circle at 12% 18%, rgba(255,255,255,0.65) 0%, transparent 28%),
+                radial-gradient(circle at 88% 12%, rgba(255,255,255,0.5) 0%, transparent 22%);
             overflow: hidden;
         }
 
@@ -49,19 +51,48 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Banderines */
+        /* ===== BANDERINES MÁS GRANDES + ANIMACIÓN LEVE ===== */
         .banderines {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 55px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Cpolygon points='0,0 20,0 10,28' fill='%23d4e8f2'/%3E%3Cpolygon points='20,0 40,0 30,28' fill='%23f0e6d8'/%3E%3Cpolygon points='40,0 60,0 50,28' fill='%23a8d0e6'/%3E%3Cpolygon points='60,0 80,0 70,28' fill='%23e8d9c8'/%3E%3Cpolygon points='80,0 100,0 90,28' fill='%23b8d9e8'/%3E%3Cpolygon points='100,0 120,0 110,28' fill='%23f5ebe0'/%3E%3C/svg%3E") repeat-x;
-            background-size: 120px 40px;
-            opacity: 0.9;
+            height: 70px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 50'%3E%3Cpolygon points='0,0 28,0 14,42' fill='%23c8e4f2'/%3E%3Cpolygon points='28,0 56,0 42,42' fill='%23f0e6d8'/%3E%3Cpolygon points='56,0 84,0 70,42' fill='%23a8d4e8'/%3E%3Cpolygon points='84,0 112,0 98,42' fill='%23e8d9c8'/%3E%3Cpolygon points='112,0 140,0 126,42' fill='%23b8d9e8'/%3E%3C/svg%3E") repeat-x;
+            background-size: 140px 50px;
+            opacity: 0.95;
+            animation: moverBanderines 8s ease-in-out infinite;
+            transform-origin: top center;
         }
 
-        /* ===== BEBÉ EN GLOBO (lado derecho) ===== */
+        @keyframes moverBanderines {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(0.6deg); }
+        }
+
+        /* ===== ESTRELLAS DE LÍNEA SEMI-TRANSPARENTES ===== */
+        .estrella-linea {
+            position: absolute;
+            color: #a8c4d4;
+            opacity: 0.35;
+            font-size: 14px;
+            pointer-events: none;
+            animation: parpadeoEstrella 5s ease-in-out infinite;
+        }
+
+        .estrella-linea:nth-child(1) { top: 18%; left: 8%; animation-delay: 0s; }
+        .estrella-linea:nth-child(2) { top: 25%; right: 11%; animation-delay: 1.2s; font-size: 12px; }
+        .estrella-linea:nth-child(3) { top: 42%; left: 5%; animation-delay: 2.1s; font-size: 11px; }
+        .estrella-linea:nth-child(4) { top: 55%; right: 7%; animation-delay: 0.7s; }
+        .estrella-linea:nth-child(5) { top: 68%; left: 12%; animation-delay: 3s; font-size: 13px; }
+        .estrella-linea:nth-child(6) { top: 78%; right: 14%; animation-delay: 1.8s; font-size: 10px; }
+
+        @keyframes parpadeoEstrella {
+            0%, 100% { opacity: 0.25; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.15); }
+        }
+
+        /* ===== BEBÉ EN GLOBO ===== */
         .bebe-globo {
             position: absolute;
             right: 3%;
@@ -76,25 +107,19 @@
                 transform: translateY(110vh) scale(0.7);
                 opacity: 0;
             }
-            10% {
-                opacity: 1;
-            }
-            30% {
-                transform: translateY(8vh) scale(1);
-            }
-            55% {
-                transform: translateY(8vh) scale(1); /* se queda 5 segundos */
-            }
+            10% { opacity: 1; }
+            30% { transform: translateY(8vh) scale(1); }
+            55% { transform: translateY(8vh) scale(1); }
             100% {
                 transform: translateY(-30vh) scale(1.05);
                 opacity: 0;
             }
         }
 
-        /* ===== AVIÓN (arriba izquierda flotando) ===== */
+        /* ===== AVIÓN ===== */
         .avion {
             position: absolute;
-            top: 70px;
+            top: 75px;
             left: 4%;
             width: 70px;
             z-index: 3;
@@ -112,7 +137,7 @@
             position: absolute;
             bottom: 15px;
             font-size: 55px;
-            opacity: 0.45;
+            opacity: 0.4;
             animation: mover-nube 22s linear infinite;
         }
 
@@ -125,7 +150,7 @@
             100% { transform: translateX(0); }
         }
 
-        /* ===== TEXTOS PORTADA ===== */
+        /* ===== TEXTOS ===== */
         .titulo-modo {
             font-family: 'Comic Neue', cursive;
             font-size: 27px;
@@ -176,7 +201,6 @@
             font-weight: 700;
         }
 
-        /* Osito */
         .osito {
             width: 240px;
             max-width: 70%;
@@ -184,7 +208,6 @@
             filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
         }
 
-        /* ¡BIENVENIDO + ANDRÉ */
         .titulo-bienvenido {
             font-family: 'Comic Neue', cursive;
             font-size: 23px;
@@ -222,7 +245,6 @@
         .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }
         .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }
 
-        /* Frase nueva */
         .frase-especial {
             font-size: 14.5px;
             color: #8a8075;
@@ -252,7 +274,7 @@
             background: #5aa9c7;
         }
 
-        /* ===== PANTALLA 2 y 3 ===== */
+        /* Pantallas 2 y 3 */
         .nombre-bebe {
             font-family: 'Playfair Display', serif;
             font-size: 48px;
@@ -372,8 +394,9 @@
             .titulo-activandose { font-size: 19px; }
             .titulo-bienvenido { font-size: 20px; }
             .bebe-globo { width: 75px; right: 2%; }
-            .avion { width: 55px; top: 65px; }
+            .avion { width: 55px; top: 70px; }
             .frase-especial { font-size: 13.5px; }
+            .banderines { height: 58px; background-size: 120px 42px; }
         }
     </style>
 </head>
@@ -383,13 +406,20 @@
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
 
-    <!-- Avión arriba izquierda -->
+    <!-- Estrellas de línea -->
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+
+    <!-- Avión -->
     <img src="images/avion.png" alt="Avión" class="avion">
 
-    <!-- Bebé en globo (sube por la derecha) -->
+    <!-- Bebé en globo -->
     <img src="images/bebe-globo.png" alt="Bebé en globo" class="bebe-globo">
 
-    <!-- TEXTOS SUPERIORES -->
     <div class="titulo-modo">¡MODO</div>
 
     <div class="letras-bebe">
@@ -401,12 +431,9 @@
 
     <div class="titulo-activandose">ACTIVÁNDOSE!</div>
 
-    <!-- OSITO -->
     <img src="https://aleinvitaciones.com/muestra-baby-shower-osito/_assets/video/fb7a2d16f42cc9960f112822f3e2e7e6.gif" 
-         alt="Osito" 
-         class="osito">
+         alt="Osito" class="osito">
 
-    <!-- ¡BIENVENIDO + ANDRÉ -->
     <div class="titulo-bienvenido">¡BIENVENIDO</div>
 
     <div class="letras-andre">
@@ -417,7 +444,6 @@
         <div class="letra-andre">É</div>
     </div>
 
-    <!-- Frase nueva -->
     <p class="frase-especial">
         La espera más hermosa está a punto de terminar.<br>
         ¡Acompáñanos a celebrar la llegada de nuestro nuevo amor!
@@ -431,6 +457,9 @@
 <!-- ===================== PANTALLA 2 ===================== -->
 <section id="pantalla2" class="pantalla">
     <div class="banderines"></div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
 
     <p style="font-size: 15.5px; color: #8a8075; max-width: 290px; line-height: 1.55; margin: 30px 0 20px;">
         Estamos muy felices de compartir<br>
@@ -460,6 +489,9 @@
 <!-- ===================== PANTALLA 3 ===================== -->
 <section id="pantalla3" class="pantalla">
     <div class="banderines"></div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div>
 
     <h2 class="titulo-seccion">¡Te esperamos! 🧸</h2>
 
