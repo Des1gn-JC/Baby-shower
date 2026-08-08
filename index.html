@@ -69,7 +69,7 @@
             75% { transform: rotate(-1.2deg) translateY(1px); }
         }
 
-        /* MUCHAS ESTRELLAS */
+        /* ESTRELLAS (muchas) */
         .estrella-linea {
             position: absolute;
             color: #8bb8cc;
@@ -79,29 +79,31 @@
             animation: parpadeoEstrella 4s ease-in-out infinite;
         }
 
-        /* Posiciones de estrellas por todos lados */
-        .estrella-linea:nth-child(1)  { top: 12%; left: 6%;  animation-delay: 0s; }
-        .estrella-linea:nth-child(2)  { top: 18%; right: 8%; animation-delay: 0.8s; font-size: 13px; }
-        .estrella-linea:nth-child(3)  { top: 28%; left: 4%;  animation-delay: 1.5s; }
-        .estrella-linea:nth-child(4)  { top: 35%; right: 5%; animation-delay: 0.4s; font-size: 14px; }
-        .estrella-linea:nth-child(5)  { top: 45%; left: 9%;  animation-delay: 2.2s; }
-        .estrella-linea:nth-child(6)  { top: 52%; right: 11%; animation-delay: 1.1s; font-size: 12px; }
-        .estrella-linea:nth-child(7)  { top: 62%; left: 7%;  animation-delay: 2.8s; }
-        .estrella-linea:nth-child(8)  { top: 70%; right: 9%; animation-delay: 0.6s; font-size: 14px; }
-        .estrella-linea:nth-child(9)  { top: 22%; left: 22%; animation-delay: 1.8s; font-size: 11px; }
-        .estrella-linea:nth-child(10) { top: 38%; right: 20%; animation-delay: 2.5s; }
-        .estrella-linea:nth-child(11) { top: 58%; left: 18%; animation-delay: 0.3s; font-size: 13px; }
-        .estrella-linea:nth-child(12) { top: 75%; right: 18%; animation-delay: 1.9s; }
-        .estrella-linea:nth-child(13) { top: 15%; left: 40%; animation-delay: 2.1s; font-size: 12px; }
-        .estrella-linea:nth-child(14) { top: 48%; left: 42%; animation-delay: 0.9s; }
-        .estrella-linea:nth-child(15) { top: 80%; left: 35%; animation-delay: 1.4s; font-size: 14px; }
+        .estrella-linea:nth-child(1)  { top: 11%; left: 5%; }
+        .estrella-linea:nth-child(2)  { top: 16%; right: 7%; animation-delay: 0.7s; font-size: 13px; }
+        .estrella-linea:nth-child(3)  { top: 24%; left: 3%; animation-delay: 1.4s; }
+        .estrella-linea:nth-child(4)  { top: 32%; right: 4%; animation-delay: 0.3s; font-size: 14px; }
+        .estrella-linea:nth-child(5)  { top: 41%; left: 8%; animation-delay: 2s; }
+        .estrella-linea:nth-child(6)  { top: 49%; right: 9%; animation-delay: 1s; font-size: 12px; }
+        .estrella-linea:nth-child(7)  { top: 58%; left: 6%; animation-delay: 2.5s; }
+        .estrella-linea:nth-child(8)  { top: 67%; right: 8%; animation-delay: 0.5s; font-size: 14px; }
+        .estrella-linea:nth-child(9)  { top: 20%; left: 20%; animation-delay: 1.7s; font-size: 11px; }
+        .estrella-linea:nth-child(10) { top: 36%; right: 18%; animation-delay: 2.3s; }
+        .estrella-linea:nth-child(11) { top: 55%; left: 16%; animation-delay: 0.2s; font-size: 13px; }
+        .estrella-linea:nth-child(12) { top: 73%; right: 16%; animation-delay: 1.8s; }
+        .estrella-linea:nth-child(13) { top: 14%; left: 38%; animation-delay: 2s; font-size: 12px; }
+        .estrella-linea:nth-child(14) { top: 46%; left: 40%; animation-delay: 0.9s; }
+        .estrella-linea:nth-child(15) { top: 78%; left: 33%; animation-delay: 1.3s; font-size: 14px; }
+        .estrella-linea:nth-child(16) { top: 28%; left: 48%; animation-delay: 2.7s; font-size: 11px; }
+        .estrella-linea:nth-child(17) { top: 62%; right: 28%; animation-delay: 0.6s; }
+        .estrella-linea:nth-child(18) { top: 85%; left: 20%; animation-delay: 1.6s; font-size: 13px; }
 
         @keyframes parpadeoEstrella {
             0%, 100% { opacity: 0.35; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.2); }
         }
 
-        /* Bebé en globo y avión */
+        /* Decoraciones */
         .bebe-globo {
             position: absolute;
             right: 3%;
@@ -217,14 +219,14 @@
             background: #5aa9c7;
         }
 
-        /* ========== PANTALLA 2 ========== */
+        /* ===== PANTALLA 2 ===== */
         .baby-texto {
             font-family: 'Comic Neue', cursive;
             font-size: 32px;
             color: #6eb5d0;
             font-weight: 700;
             letter-spacing: 3px;
-            margin-top: 25px; /* baja para no chocar con banderines */
+            margin-top: 25px;
             opacity: 0;
             transform: translateY(40px);
             animation: subirTexto 0.8s ease forwards;
@@ -274,7 +276,6 @@
             font-weight: 700;
         }
 
-        /* Formas tiernas para los nombres */
         .forma-nombre {
             display: inline-block;
             padding: 10px 22px;
@@ -284,14 +285,8 @@
             animation: reboteLetra 3s ease-in-out infinite;
         }
 
-        .forma-papa {
-            background: #7ec8e3; /* azul como la N */
-        }
-
-        .forma-mama {
-            background: #e8a0bf; /* rosado como la R */
-            animation-delay: 0.3s;
-        }
+        .forma-papa { background: #7ec8e3; }
+        .forma-mama { background: #e8a0bf; animation-delay: 0.3s; }
 
         .nombre-dentro {
             color: white;
@@ -315,6 +310,19 @@
             line-height: 1.5;
             margin: 18px 0 12px;
             font-style: italic;
+        }
+
+        /* Calendario animado */
+        .calendario-icono {
+            font-size: 42px;
+            margin-bottom: 6px;
+            animation: balanceoCalendario 3s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes balanceoCalendario {
+            0%, 100% { transform: rotate(-6deg); }
+            50% { transform: rotate(6deg); }
         }
 
         .fecha-bonita {
@@ -358,12 +366,63 @@
             transform: translateX(-4px);
         }
 
-        /* Pantalla 3 */
-        .titulo-seccion {
-            font-family: 'Playfair Display', serif;
-            font-size: 27px;
-            color: #6d98b1;
+        /* ===== PANTALLA 3 ===== */
+        .titulo-cuenta {
+            font-family: 'Comic Neue', cursive;
+            font-size: 26px;
+            color: #6eb5d0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .reloj-icono {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: ticTac 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes ticTac {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+
+        .frase-cuenta {
+            font-size: 14.5px;
+            color: #8a8075;
+            max-width: 320px;
+            line-height: 1.5;
+            margin: 18px 0 22px;
+            font-style: italic;
+        }
+
+        .titulo-ubicacion {
+            font-family: 'Comic Neue', cursive;
+            font-size: 18px;
+            color: #6eb5d0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .gps-icono {
+            font-size: 36px;
+            margin-bottom: 8px;
+            display: inline-block;
+            animation: pulsoGPS 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulsoGPS {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .lugar {
+            font-size: 15.5px;
+            line-height: 1.6;
             margin-bottom: 24px;
+            color: #5e574e;
         }
 
         .contador {
@@ -371,7 +430,7 @@
             gap: 9px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 28px;
+            margin-bottom: 10px;
         }
 
         .tiempo {
@@ -393,12 +452,6 @@
         .texto-tiempo {
             font-size: 11px;
             color: #a09488;
-        }
-
-        .lugar {
-            font-size: 15.5px;
-            line-height: 1.6;
-            margin-bottom: 24px;
         }
 
         .botones {
@@ -428,11 +481,12 @@
             .osito { width: 195px; }
             .letra { width: 40px; height: 46px; font-size: 23px; }
             .letra-andre { width: 37px; height: 43px; font-size: 21px; }
-            .baby-texto { font-size: 28px; margin-top: 20px; }
+            .baby-texto { font-size: 28px; }
             .shower-texto { font-size: 24px; }
             .bebe-globo { width: 75px; }
             .avion { width: 55px; }
             .nombre-dentro { font-size: 13.5px; }
+            .titulo-cuenta { font-size: 23px; }
         }
     </style>
 </head>
@@ -442,6 +496,7 @@
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
     <!-- Muchas estrellas -->
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
@@ -476,6 +531,7 @@
 <!-- ===================== PANTALLA 2 ===================== -->
 <section id="pantalla2" class="pantalla">
     <div class="banderines"></div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
@@ -517,6 +573,8 @@
         Te esperamos:
     </p>
 
+    <!-- Calendario animado -->
+    <div class="calendario-icono">📅</div>
     <div class="fecha-bonita">29 DE AGOSTO DEL 2026</div>
     <div class="hora-label">HORA</div>
     <div class="hora-valor">6:00 PM</div>
@@ -530,8 +588,10 @@
     <div class="banderines"></div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
     <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
+    <div class="estrella-linea">✧</div><div class="estrella-linea">✧</div><div class="estrella-linea">✧</div>
 
-    <h2 class="titulo-seccion">¡Te esperamos! 🧸</h2>
+    <div class="titulo-cuenta">¡CUENTA REGRESIVA!</div>
+    <div class="reloj-icono">⏰</div>
 
     <div class="contador">
         <div class="tiempo"><span id="dias" class="numero">0</span><span class="texto-tiempo">DÍAS</span></div>
@@ -540,16 +600,29 @@
         <div class="tiempo"><span id="segundos" class="numero">0</span><span class="texto-tiempo">SEG</span></div>
     </div>
 
-    <h3 style="margin-bottom: 8px; color:#6d98b1;">📍 LUGAR</h3>
+    <p class="frase-cuenta">
+        ¡Atención! La cuenta regresiva está activada.<br>
+        Solo quedan unos días para llenar de amor y pañales nuestro hogar.
+    </p>
+
+    <div class="titulo-ubicacion">UBICACIÓN DE CELEBRACIÓN</div>
+    <div class="gps-icono">📍</div>
+
     <p class="lugar">
-        Urb. La Nueva Florida B3<br>
-        J.L.B. y Rivero
+        Urbanización La Nueva Florida B3<br>
+        José Luis Bustamante y Rivero
     </p>
 
     <div class="botones">
-        <a class="boton-secundario" href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw" target="_blank">📍 VER UBICACIÓN</a>
-        <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">💬 CONFIRMAR CON PAPÁ</a>
-        <a class="boton-secundario whatsapp" href="https://wa.me/51YYYYYYYYY?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">💬 CONFIRMAR CON MAMÁ</a>
+        <a class="boton-secundario" href="https://maps.app.goo.gl/dSGwd8S98aLC2Xvy7" target="_blank" rel="noopener">
+            📍 VER UBICACIÓN
+        </a>
+        <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
+            💬 CONFIRMAR CON PAPÁ
+        </a>
+        <a class="boton-secundario whatsapp" href="https://wa.me/51YYYYYYYYY?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
+            💬 CONFIRMAR CON MAMÁ
+        </a>
     </div>
 
     <button class="flecha-atras" onclick="mostrarPantalla(2)">←</button>
