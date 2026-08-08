@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baby Shower André</title>
     
-    <!-- Tipografías suaves -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -22,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo texturizado tipo papel */
         .pantalla {
             min-height: 100vh;
             width: 100%;
@@ -51,13 +49,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ========== DECORACIONES ========== */
+        /* Decoraciones */
         .banderines {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 60px;
+            height: 55px;
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Cpolygon points='0,0 20,0 10,28' fill='%23d4e8f2'/%3E%3Cpolygon points='20,0 40,0 30,28' fill='%23f0e6d8'/%3E%3Cpolygon points='40,0 60,0 50,28' fill='%23a8d0e6'/%3E%3Cpolygon points='60,0 80,0 70,28' fill='%23e8d9c8'/%3E%3Cpolygon points='80,0 100,0 90,28' fill='%23b8d9e8'/%3E%3Cpolygon points='100,0 120,0 110,28' fill='%23f5ebe0'/%3E%3C/svg%3E") repeat-x;
             background-size: 120px 40px;
             opacity: 0.9;
@@ -65,67 +63,77 @@
 
         .globo {
             position: absolute;
-            top: 40px;
-            right: 8%;
-            width: 70px;
-            animation: flotar-globo 5s ease-in-out infinite;
+            top: 50px;
+            right: 7%;
+            width: 68px;
+            animation: flotar-globo 5.5s ease-in-out infinite;
+            z-index: 2;
         }
 
         @keyframes flotar-globo {
-            0%, 100% { transform: translateY(0) rotate(-3deg); }
-            50% { transform: translateY(-18px) rotate(3deg); }
+            0%, 100% { transform: translateY(0) rotate(-4deg); }
+            50% { transform: translateY(-16px) rotate(4deg); }
         }
 
         .avion {
             position: absolute;
-            top: 120px;
-            left: 8%;
-            width: 38px;
-            opacity: 0.8;
-            animation: volar 8s linear infinite;
+            top: 130px;
+            left: 6%;
+            width: 36px;
+            opacity: 0.85;
+            animation: volar 9s ease-in-out infinite;
         }
 
         @keyframes volar {
-            0% { transform: translateX(0) rotate(-10deg); }
-            100% { transform: translateX(40px) rotate(-5deg); }
+            0%, 100% { transform: translateX(0) rotate(-8deg); }
+            50% { transform: translateX(25px) rotate(-3deg); }
         }
 
         .nube {
             position: absolute;
-            bottom: 30px;
-            width: 140px;
-            opacity: 0.7;
+            bottom: 25px;
+            width: 150px;
+            opacity: 0.65;
+            animation: mover-nube 18s linear infinite;
         }
 
-        .nube1 { left: -20px; }
-        .nube2 { right: -30px; bottom: 60px; width: 110px; }
+        .nube1 { left: -40px; animation-duration: 22s; }
+        .nube2 { right: -50px; bottom: 70px; width: 120px; animation-duration: 26s; animation-direction: reverse; }
+
+        @keyframes mover-nube {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+            100% { transform: translateX(0); }
+        }
 
         .estrella {
             position: absolute;
-            font-size: 14px;
+            font-size: 13px;
             color: #a8c8d8;
             opacity: 0.7;
+            animation: parpadeo 3s ease-in-out infinite;
         }
 
-        /* ========== PANTALLA 1 ========== */
-        .osito {
-            width: 240px;
-            max-width: 70%;
-            margin: 20px 0 15px;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.08));
-            animation: flotar-osito 3.5s ease-in-out infinite;
+        @keyframes parpadeo {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.9; }
         }
 
-        @keyframes flotar-osito {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+        /* ===== PANTALLA 1 ===== */
+        .titulo-modo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #7bb3cb;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        .letras-baby {
+        .letras-bebe {
             display: flex;
-            gap: 6px;
+            gap: 7px;
             justify-content: center;
-            margin-bottom: 6px;
+            margin: 8px 0 10px;
         }
 
         .letra {
@@ -133,44 +141,52 @@
             color: #7a9eb5;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
-            font-size: 26px;
-            width: 42px;
-            height: 48px;
+            font-size: 28px;
+            width: 46px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            border-radius: 9px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
             border: 1px solid #e8e0d5;
         }
 
-        .shower {
+        .titulo-activandose {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 22px;
             color: #7bb3cb;
-            letter-spacing: 4px;
-            margin-bottom: 22px;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
             font-weight: 500;
         }
 
+        .osito-video {
+            width: 250px;
+            max-width: 72%;
+            margin: 10px 0 20px;
+            border-radius: 20px;
+            filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
+        }
+
         .texto-bienvenida {
-            font-size: 16px;
+            font-size: 15.5px;
             color: #8a8075;
-            max-width: 300px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            max-width: 290px;
+            line-height: 1.55;
+            margin-bottom: 28px;
         }
 
         .boton {
             background: #7bb3cb;
             color: white;
             border: none;
-            padding: 14px 32px;
+            padding: 14px 34px;
             border-radius: 50px;
             font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 6px 16px rgba(123, 179, 203, 0.35);
+            box-shadow: 0 6px 18px rgba(123, 179, 203, 0.35);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
@@ -179,49 +195,49 @@
 
         .boton:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(123, 179, 203, 0.45);
+            box-shadow: 0 9px 22px rgba(123, 179, 203, 0.45);
             background: #6aa3bb;
         }
 
         .dale-click {
-            margin-top: 12px;
-            font-size: 13px;
+            margin-top: 11px;
+            font-size: 12.5px;
             color: #a09488;
             letter-spacing: 1px;
         }
 
-        /* ========== PANTALLA 2 ========== */
+        /* ===== PANTALLA 2 ===== */
         .nombre-bebe {
             font-family: 'Playfair Display', serif;
             font-size: 48px;
             color: #6d98b1;
-            margin: 10px 0 5px;
+            margin: 12px 0 6px;
             font-weight: 600;
         }
 
         .baby-shower-texto {
-            font-size: 20px;
+            font-size: 19px;
             color: #a99578;
             letter-spacing: 3px;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .padres {
-            font-size: 17px;
+            font-size: 16.5px;
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             color: #6b6358;
         }
 
         .datos {
-            background: rgba(255,255,255,0.75);
+            background: rgba(255,255,255,0.78);
             border-radius: 18px;
-            padding: 22px 28px;
+            padding: 22px 26px;
             width: 100%;
             max-width: 340px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             border: 1px solid #ebe4da;
-            margin-bottom: 25px;
+            margin-bottom: 26px;
         }
 
         .dato {
@@ -230,34 +246,34 @@
             color: #5e574e;
         }
 
-        /* ========== PANTALLA 3 ========== */
+        /* ===== PANTALLA 3 ===== */
         .titulo-seccion {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 27px;
             color: #6d98b1;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .contador {
             display: flex;
-            gap: 10px;
+            gap: 9px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .tiempo {
             background: white;
-            padding: 12px 10px;
+            padding: 12px 9px;
             border-radius: 14px;
-            min-width: 68px;
+            min-width: 66px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border: 1px solid #ebe4da;
         }
 
         .numero {
             display: block;
-            font-size: 24px;
+            font-size: 23px;
             color: #6d98b1;
             font-weight: 700;
         }
@@ -269,9 +285,9 @@
         }
 
         .lugar {
-            font-size: 16px;
+            font-size: 15.5px;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             color: #6b6358;
         }
 
@@ -314,13 +330,13 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        /* Responsive */
         @media (max-width: 480px) {
-            .osito { width: 200px; }
-            .letra { width: 36px; height: 42px; font-size: 22px; }
-            .shower { font-size: 24px; }
+            .osito-video { width: 210px; }
+            .letra { width: 40px; height: 46px; font-size: 24px; }
+            .titulo-modo { font-size: 23px; }
+            .titulo-activandose { font-size: 19px; }
             .nombre-bebe { font-size: 40px; }
-            .globo { width: 55px; right: 5%; }
+            .globo { width: 55px; right: 4%; }
         }
     </style>
 </head>
@@ -330,27 +346,32 @@
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
     
-    <!-- Globo aerostático (puedes cambiar la imagen si tienes una mejor) -->
+    <!-- Globo aerostático -->
     <img src="https://cdn-icons-png.flaticon.com/512/3063/3063176.png" class="globo" alt="Globo">
     
     <!-- Avioncito -->
     <img src="https://cdn-icons-png.flaticon.com/512/3050/3050243.png" class="avion" alt="Avión">
 
-    <div class="estrella" style="top: 180px; left: 12%;">✦</div>
-    <div class="estrella" style="top: 160px; right: 18%;">✦</div>
+    <div class="estrella" style="top: 175px; left: 11%;">✦</div>
+    <div class="estrella" style="top: 155px; right: 16%; animation-delay: 1.2s;">✦</div>
 
-    <!-- OSITO GIF -->
-    <img src="images/osito.gif" alt="Osito" class="osito">
+    <!-- TEXTO PORTADA -->
+    <div class="titulo-modo">MODO</div>
 
-    <!-- Letras BABY -->
-    <div class="letras-baby">
+    <div class="letras-bebe">
         <div class="letra">B</div>
-        <div class="letra">A</div>
+        <div class="letra">E</div>
         <div class="letra">B</div>
-        <div class="letra">Y</div>
+        <div class="letra">É</div>
     </div>
 
-    <div class="shower">SHOWER</div>
+    <div class="titulo-activandose">ACTIVÁNDOSE</div>
+
+    <!-- OSITO EN VIDEO -->
+    <video class="osito-video" autoplay muted loop playsinline>
+        <source src="images/osito.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
 
     <p class="texto-bienvenida">
         Estamos muy felices de compartir<br>
@@ -432,7 +453,7 @@
             📍 VER UBICACIÓN
         </a>
         
-        <!-- CAMBIA ESTOS NÚMEROS -->
+        <!-- CAMBIA LOS NÚMEROS DE WHATSAPP AQUÍ -->
         <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
             💬 CONFIRMAR CON PAPÁ
         </a>
