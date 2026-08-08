@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Shower André</title> 
+    <title>Baby Shower André</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Comic+Neue:wght@700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
     
@@ -61,56 +61,50 @@
             opacity: 0.9;
         }
 
-        /* ===== GLOBOS MÁS GRANDES Y ANIMADOS ===== */
-        .globo-decoracion {
+        /* ===== BEBÉ EN GLOBO (lado derecho) ===== */
+        .bebe-globo {
             position: absolute;
-            font-size: 68px;
-            z-index: 2;
-            filter: drop-shadow(0 6px 8px rgba(0,0,0,0.12));
-            animation: globoSube 11s ease-in-out infinite;
+            right: 3%;
+            width: 95px;
+            z-index: 3;
+            animation: subirGlobo 14s ease-in-out infinite;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.12));
         }
 
-        .globo1 {
-            left: 4%;
-            animation-delay: 0s;
-        }
-
-        .globo2 {
-            right: 5%;
-            font-size: 78px;
-            animation-delay: 1.8s;
-        }
-
-        .globo3 {
-            left: 15%;
-            font-size: 58px;
-            animation-delay: 3.5s;
-        }
-
-        .globo4 {
-            right: 16%;
-            font-size: 52px;
-            animation-delay: 5s;
-        }
-
-        @keyframes globoSube {
+        @keyframes subirGlobo {
             0% {
-                transform: translateY(120vh) scale(0.7);
+                transform: translateY(110vh) scale(0.7);
                 opacity: 0;
             }
-            12% {
+            10% {
                 opacity: 1;
             }
-            35% {
-                transform: translateY(6vh) scale(1);
+            30% {
+                transform: translateY(8vh) scale(1);
             }
             55% {
-                transform: translateY(6vh) scale(1); /* se queda arriba */
+                transform: translateY(8vh) scale(1); /* se queda 5 segundos */
             }
             100% {
-                transform: translateY(-25vh) scale(1.1);
+                transform: translateY(-30vh) scale(1.05);
                 opacity: 0;
             }
+        }
+
+        /* ===== AVIÓN (arriba izquierda flotando) ===== */
+        .avion {
+            position: absolute;
+            top: 70px;
+            left: 4%;
+            width: 70px;
+            z-index: 3;
+            animation: flotarAvion 4.5s ease-in-out infinite;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        @keyframes flotarAvion {
+            0%, 100% { transform: translateY(0) rotate(-6deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
         }
 
         /* Nubes */
@@ -118,7 +112,7 @@
             position: absolute;
             bottom: 15px;
             font-size: 55px;
-            opacity: 0.5;
+            opacity: 0.45;
             animation: mover-nube 22s linear infinite;
         }
 
@@ -184,16 +178,16 @@
 
         /* Osito */
         .osito {
-            width: 250px;
-            max-width: 72%;
-            margin: 6px 0 16px;
+            width: 240px;
+            max-width: 70%;
+            margin: 6px 0 14px;
             filter: drop-shadow(0 12px 18px rgba(0,0,0,0.1));
         }
 
         /* ¡BIENVENIDO + ANDRÉ */
         .titulo-bienvenido {
             font-family: 'Comic Neue', cursive;
-            font-size: 24px;
+            font-size: 23px;
             color: #6eb5d0;
             letter-spacing: 2px;
             margin-bottom: 8px;
@@ -204,16 +198,16 @@
             display: flex;
             gap: 7px;
             justify-content: center;
-            margin-bottom: 26px;
+            margin-bottom: 16px;
         }
 
         .letra-andre {
             color: white;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
-            font-size: 26px;
-            width: 44px;
-            height: 50px;
+            font-size: 25px;
+            width: 43px;
+            height: 49px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -222,11 +216,21 @@
             animation: reboteLetra 2.8s ease-in-out infinite;
         }
 
-        .letra-andre:nth-child(1) { background: #f7b267; animation-delay: 0s; }      /* naranja suave */
-        .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }     /* celeste */
-        .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }     /* verde menta */
-        .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }     /* rosa suave */
-        .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }     /* azul */
+        .letra-andre:nth-child(1) { background: #f7b267; animation-delay: 0s; }
+        .letra-andre:nth-child(2) { background: #7ec8e3; animation-delay: 0.1s; }
+        .letra-andre:nth-child(3) { background: #88c9a0; animation-delay: 0.2s; }
+        .letra-andre:nth-child(4) { background: #e8a0bf; animation-delay: 0.3s; }
+        .letra-andre:nth-child(5) { background: #6eb5d0; animation-delay: 0.4s; }
+
+        /* Frase nueva */
+        .frase-especial {
+            font-size: 14.5px;
+            color: #8a8075;
+            max-width: 300px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
 
         .boton {
             background: #6eb5d0;
@@ -361,14 +365,15 @@
         }
 
         @media (max-width: 480px) {
-            .osito { width: 210px; }
-            .letra { width: 41px; height: 47px; font-size: 24px; }
-            .letra-andre { width: 38px; height: 44px; font-size: 22px; }
+            .osito { width: 200px; }
+            .letra { width: 40px; height: 46px; font-size: 23px; }
+            .letra-andre { width: 37px; height: 43px; font-size: 21px; }
             .titulo-modo { font-size: 23px; }
             .titulo-activandose { font-size: 19px; }
-            .titulo-bienvenido { font-size: 21px; }
-            .globo-decoracion { font-size: 54px; }
-            .globo2 { font-size: 64px; }
+            .titulo-bienvenido { font-size: 20px; }
+            .bebe-globo { width: 75px; right: 2%; }
+            .avion { width: 55px; top: 65px; }
+            .frase-especial { font-size: 13.5px; }
         }
     </style>
 </head>
@@ -378,11 +383,11 @@
 <section id="pantalla1" class="pantalla activa">
     <div class="banderines"></div>
 
-    <!-- Globos grandes -->
-    <div class="globo-decoracion globo1">🎈</div>
-    <div class="globo-decoracion globo2">🎈</div>
-    <div class="globo-decoracion globo3">🎈</div>
-    <div class="globo-decoracion globo4">🎈</div>
+    <!-- Avión arriba izquierda -->
+    <img src="images/avion.png" alt="Avión" class="avion">
+
+    <!-- Bebé en globo (sube por la derecha) -->
+    <img src="images/bebe-globo.png" alt="Bebé en globo" class="bebe-globo">
 
     <!-- TEXTOS SUPERIORES -->
     <div class="titulo-modo">¡MODO</div>
@@ -411,6 +416,12 @@
         <div class="letra-andre">R</div>
         <div class="letra-andre">É</div>
     </div>
+
+    <!-- Frase nueva -->
+    <p class="frase-especial">
+        La espera más hermosa está a punto de terminar.<br>
+        ¡Acompáñanos a celebrar la llegada de nuestro nuevo amor!
+    </p>
 
     <button class="boton" onclick="mostrarPantalla(2)">
         ✉️ VER INVITACIÓN
