@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Baby Shower André</title>
-
+    
+    <!-- Tipografías suaves -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    
     <style>
-
-        /* =========================
-           CONFIGURACIÓN GENERAL
-        ========================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -20,171 +16,224 @@
         }
 
         body {
-            font-family: Georgia, serif;
-            background: #f5efe4;
-            color: #6f6a5e;
+            font-family: 'Nunito', sans-serif;
+            background: #f7f3eb;
+            color: #6b6358;
             overflow-x: hidden;
         }
 
+        /* Fondo texturizado tipo papel */
         .pantalla {
             min-height: 100vh;
             width: 100%;
             display: none;
-
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
-            padding: 35px 20px;
-
+            padding: 40px 20px;
             position: relative;
-
-            background:
-                radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 30%),
-                #f5efe4;
+            background-color: #f7f3eb;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.7) 0%, transparent 25%),
+                radial-gradient(circle at 85% 15%, rgba(255,255,255,0.5) 0%, transparent 20%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            overflow: hidden;
         }
 
         .pantalla.activa {
             display: flex;
-            animation: aparecer 0.8s ease;
+            animation: aparecer 0.7s ease;
         }
 
         @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-
-        /* =========================
-           PANTALLA 1
-        ========================== */
-
-        .titulo-principal {
-            font-family: Georgia, serif;
-            font-size: 34px;
-            color: #6d98b1;
-            letter-spacing: 2px;
-            margin-bottom: 35px;
+        /* ========== DECORACIONES ========== */
+        .banderines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Cpolygon points='0,0 20,0 10,28' fill='%23d4e8f2'/%3E%3Cpolygon points='20,0 40,0 30,28' fill='%23f0e6d8'/%3E%3Cpolygon points='40,0 60,0 50,28' fill='%23a8d0e6'/%3E%3Cpolygon points='60,0 80,0 70,28' fill='%23e8d9c8'/%3E%3Cpolygon points='80,0 100,0 90,28' fill='%23b8d9e8'/%3E%3Cpolygon points='100,0 120,0 110,28' fill='%23f5ebe0'/%3E%3C/svg%3E") repeat-x;
+            background-size: 120px 40px;
+            opacity: 0.9;
         }
 
+        .globo {
+            position: absolute;
+            top: 40px;
+            right: 8%;
+            width: 70px;
+            animation: flotar-globo 5s ease-in-out infinite;
+        }
+
+        @keyframes flotar-globo {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-18px) rotate(3deg); }
+        }
+
+        .avion {
+            position: absolute;
+            top: 120px;
+            left: 8%;
+            width: 38px;
+            opacity: 0.8;
+            animation: volar 8s linear infinite;
+        }
+
+        @keyframes volar {
+            0% { transform: translateX(0) rotate(-10deg); }
+            100% { transform: translateX(40px) rotate(-5deg); }
+        }
+
+        .nube {
+            position: absolute;
+            bottom: 30px;
+            width: 140px;
+            opacity: 0.7;
+        }
+
+        .nube1 { left: -20px; }
+        .nube2 { right: -30px; bottom: 60px; width: 110px; }
+
+        .estrella {
+            position: absolute;
+            font-size: 14px;
+            color: #a8c8d8;
+            opacity: 0.7;
+        }
+
+        /* ========== PANTALLA 1 ========== */
         .osito {
-            width: 270px;
-            max-width: 80%;
-            margin-bottom: 25px;
-
-            animation: flotando 3s ease-in-out infinite;
+            width: 240px;
+            max-width: 70%;
+            margin: 20px 0 15px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.08));
+            animation: flotar-osito 3.5s ease-in-out infinite;
         }
 
-        @keyframes flotando {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
+        @keyframes flotar-osito {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
         }
 
-        .bienvenido {
-            font-size: 42px;
-            color: #6d98b1;
-            margin-bottom: 35px;
+        .letras-baby {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 6px;
+        }
+
+        .letra {
+            background: #ffffff;
+            color: #7a9eb5;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 26px;
+            width: 42px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8e0d5;
+        }
+
+        .shower {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #7bb3cb;
+            letter-spacing: 4px;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .texto-bienvenida {
+            font-size: 16px;
+            color: #8a8075;
+            max-width: 300px;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
         .boton {
-            border: none;
-            background: #83b5d0;
+            background: #7bb3cb;
             color: white;
-
-            padding: 15px 30px;
-
-            border-radius: 12px;
-
-            font-size: 17px;
-            font-weight: bold;
-
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
             cursor: pointer;
-
-            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-
-            transition: 0.3s;
+            box-shadow: 0 6px 16px rgba(123, 179, 203, 0.35);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .boton:hover {
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(123, 179, 203, 0.45);
+            background: #6aa3bb;
         }
 
+        .dale-click {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #a09488;
+            letter-spacing: 1px;
+        }
 
-        /* =========================
-           PANTALLA 2
-        ========================== */
+        /* ========== PANTALLA 2 ========== */
+        .nombre-bebe {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #6d98b1;
+            margin: 10px 0 5px;
+            font-weight: 600;
+        }
 
-        .subtitulo {
-            font-size: 22px;
-            color: #8d8170;
-            max-width: 400px;
-            line-height: 1.5;
-
+        .baby-shower-texto {
+            font-size: 20px;
+            color: #a99578;
+            letter-spacing: 3px;
             margin-bottom: 25px;
         }
 
-        .nombre-bebe {
-            font-size: 52px;
-            color: #6d98b1;
-            margin-bottom: 5px;
-        }
-
-        .baby-shower {
-            font-size: 28px;
-            color: #a99578;
-            margin-bottom: 30px;
-        }
-
         .padres {
-            font-size: 19px;
-            line-height: 1.8;
-            margin-bottom: 30px;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #6b6358;
         }
 
         .datos {
-            background: rgba(255,255,255,0.65);
-
-            border-radius: 20px;
-
-            padding: 25px;
-
+            background: rgba(255,255,255,0.75);
+            border-radius: 18px;
+            padding: 22px 28px;
             width: 100%;
-            max-width: 400px;
-
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            max-width: 340px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 1px solid #ebe4da;
+            margin-bottom: 25px;
         }
 
         .dato {
-            font-size: 18px;
-            margin: 12px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            color: #5e574e;
         }
 
-
-        /* =========================
-           PANTALLA 3
-        ========================== */
-
+        /* ========== PANTALLA 3 ========== */
         .titulo-seccion {
-            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
             color: #6d98b1;
             margin-bottom: 25px;
         }
@@ -194,400 +243,239 @@
             gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .tiempo {
             background: white;
-
-            padding: 12px;
-
-            border-radius: 15px;
-
-            min-width: 70px;
-
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 12px 10px;
+            border-radius: 14px;
+            min-width: 68px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #ebe4da;
         }
 
         .numero {
             display: block;
-            font-size: 27px;
+            font-size: 24px;
             color: #6d98b1;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .texto-tiempo {
-            font-size: 12px;
-            color: #999;
+            font-size: 11px;
+            color: #a09488;
+            letter-spacing: 0.5px;
         }
 
         .lugar {
-            font-size: 19px;
+            font-size: 16px;
             line-height: 1.6;
-
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: #6b6358;
         }
 
         .botones {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-
+            gap: 12px;
             width: 100%;
-            max-width: 320px;
+            max-width: 300px;
         }
 
         .boton-secundario {
             text-decoration: none;
-
-            background: #83b5d0;
+            background: #7bb3cb;
             color: white;
+            padding: 13px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 5px 14px rgba(123, 179, 203, 0.3);
+            transition: 0.3s;
+        }
 
-            padding: 14px;
-
-            border-radius: 12px;
-
-            font-weight: bold;
+        .boton-secundario:hover {
+            transform: translateY(-2px);
         }
 
         .whatsapp {
             background: #88b89a;
+            box-shadow: 0 5px 14px rgba(136, 184, 154, 0.3);
         }
-
-
-        /* =========================
-           BOTÓN ATRÁS
-        ========================== */
 
         .atras {
-            margin-top: 25px;
-
+            margin-top: 22px;
             border: none;
             background: transparent;
-
-            color: #8d8170;
-
+            color: #a09488;
             cursor: pointer;
-
-            font-size: 15px;
+            font-size: 14px;
+            font-family: 'Nunito', sans-serif;
         }
 
-
-        /* =========================
-           CELULARES
-        ========================== */
-
+        /* Responsive */
         @media (max-width: 480px) {
-
-            .titulo-principal {
-                font-size: 28px;
-            }
-
-            .bienvenido {
-                font-size: 36px;
-            }
-
-            .osito {
-                width: 230px;
-            }
-
-            .nombre-bebe {
-                font-size: 45px;
-            }
-
-            .subtitulo {
-                font-size: 19px;
-            }
+            .osito { width: 200px; }
+            .letra { width: 36px; height: 42px; font-size: 22px; }
+            .shower { font-size: 24px; }
+            .nombre-bebe { font-size: 40px; }
+            .globo { width: 55px; right: 5%; }
         }
-
     </style>
 </head>
-
-
 <body>
 
-
-<!-- ===================================
-     PANTALLA 1 - PORTADA
-==================================== -->
-
+<!-- ===================== PANTALLA 1 ===================== -->
 <section id="pantalla1" class="pantalla activa">
+    <div class="banderines"></div>
+    
+    <!-- Globo aerostático (puedes cambiar la imagen si tienes una mejor) -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063176.png" class="globo" alt="Globo">
+    
+    <!-- Avioncito -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3050/3050243.png" class="avion" alt="Avión">
 
-    <h1 class="titulo-principal">
-        MODO<br>
-        BEBÉ<br>
-        <span>ACTIVÁNDOSE</span>
-    </h1>
+    <div class="estrella" style="top: 180px; left: 12%;">✦</div>
+    <div class="estrella" style="top: 160px; right: 18%;">✦</div>
 
+    <!-- OSITO GIF -->
+    <img src="images/osito.gif" alt="Osito" class="osito">
 
-    <!-- IMAGEN DEL OSITO -->
+    <!-- Letras BABY -->
+    <div class="letras-baby">
+        <div class="letra">B</div>
+        <div class="letra">A</div>
+        <div class="letra">B</div>
+        <div class="letra">Y</div>
+    </div>
 
-    <img 
-        src="images/osito.png"
-        alt="Osito"
-        class="osito">
+    <div class="shower">SHOWER</div>
 
-
-    <h2 class="bienvenido">
-        BIENVENIDO<br>
-        <span>ANDRÉ</span>
-    </h2>
-
+    <p class="texto-bienvenida">
+        Estamos muy felices de compartir<br>
+        este momento tan importante con ustedes
+    </p>
 
     <button class="boton" onclick="mostrarPantalla(2)">
-        💌 VER INVITACIÓN
+        ✉️ VER INVITACIÓN
     </button>
+    <div class="dale-click">¡DALE CLICK!</div>
 
+    <!-- Nubes -->
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" class="nube nube1" alt="">
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" class="nube nube2" alt="">
 </section>
 
+<!-- ===================== PANTALLA 2 ===================== -->
+<section id="pantalla2" class="pantalla">
+    <div class="banderines"></div>
 
+    <p class="texto-bienvenida" style="margin-top: 30px;">
+        Estamos muy felices de compartir<br>
+        este momento tan importante<br>
+        con ustedes.
+    </p>
 
-    <!-- ===================================
-         PANTALLA 2 - INVITACIÓN
-    ==================================== -->
+    <h2 class="nombre-bebe">André</h2>
+    <div class="baby-shower-texto">BABY SHOWER</div>
 
-    <section id="pantalla2" class="pantalla">
+    <div class="padres">
+        👨‍👩‍👧<br>
+        <strong>Jersson Castilla Veliz</strong><br>
+        y<br>
+        <strong>Lucero Pizarro Medina</strong>
+    </div>
 
-        <p class="subtitulo">
-            Estamos muy felices de compartir
-            este momento tan importante
-            con ustedes.
-        </p>
+    <div class="datos">
+        <div class="dato">📅 <strong>29 de agosto de 2026</strong></div>
+        <div class="dato">🕐 <strong>10:30 a. m.</strong></div>
+    </div>
 
+    <button class="boton" onclick="mostrarPantalla(3)">CONTINUAR →</button>
+    <button class="atras" onclick="mostrarPantalla(1)">← Volver</button>
+</section>
 
-        <h2 class="nombre-bebe">
-            André
-        </h2>
+<!-- ===================== PANTALLA 3 ===================== -->
+<section id="pantalla3" class="pantalla">
+    <div class="banderines"></div>
 
+    <h2 class="titulo-seccion">¡Te esperamos! 🧸</h2>
 
-        <h3 class="baby-shower">
-            BABY SHOWER
-        </h3>
-
-
-        <div class="padres">
-
-            <p>
-                👨‍👩‍👧
-            </p>
-
-            <p>
-                <strong>Jersson Castilla Veliz</strong>
-            </p>
-
-            <p>
-                y
-            </p>
-
-            <p>
-                <strong>Lucero Pizarro Medina</strong>
-            </p>
-
+    <div class="contador">
+        <div class="tiempo">
+            <span id="dias" class="numero">0</span>
+            <span class="texto-tiempo">DÍAS</span>
         </div>
-
-
-        <div class="datos">
-
-            <div class="dato">
-                📅 <strong>29 de agosto de 2026</strong>
-            </div>
-
-            <div class="dato">
-                🕐 <strong>10:30 a. m.</strong>
-            </div>
-
+        <div class="tiempo">
+            <span id="horas" class="numero">0</span>
+            <span class="texto-tiempo">HORAS</span>
         </div>
-
-
-        <button class="atras" onclick="mostrarPantalla(1)">
-            ← Volver
-        </button>
-
-        <button class="boton" onclick="mostrarPantalla(3)">
-            CONTINUAR →
-        </button>
-
-    </section>
-
-
-
-    <!-- ===================================
-         PANTALLA 3 - INFORMACIÓN
-    ==================================== -->
-
-    <section id="pantalla3" class="pantalla">
-
-        <h2 class="titulo-seccion">
-            ¡Te esperamos! 🧸
-        </h2>
-
-
-        <!-- CUENTA REGRESIVA -->
-
-        <div class="contador">
-
-            <div class="tiempo">
-                <span id="dias" class="numero">0</span>
-                <span class="texto-tiempo">DÍAS</span>
-            </div>
-
-            <div class="tiempo">
-                <span id="horas" class="numero">0</span>
-                <span class="texto-tiempo">HORAS</span>
-            </div>
-
-            <div class="tiempo">
-                <span id="minutos" class="numero">0</span>
-                <span class="texto-tiempo">MIN</span>
-            </div>
-
-            <div class="tiempo">
-                <span id="segundos" class="numero">0</span>
-                <span class="texto-tiempo">SEG</span>
-            </div>
-
+        <div class="tiempo">
+            <span id="minutos" class="numero">0</span>
+            <span class="texto-tiempo">MIN</span>
         </div>
-
-
-        <!-- LUGAR -->
-
-        <h3>
-            📍 LUGAR
-        </h3>
-
-        <p class="lugar">
-
-            Urb. La Nueva Florida B3<br>
-            J.L.B. y Rivero
-
-        </p>
-
-
-        <div class="botones">
-
-            <a
-                class="boton-secundario"
-                href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw"
-                target="_blank">
-
-                📍 VER UBICACIÓN
-
-            </a>
-
-
-            <!-- CAMBIAREMOS ESTOS DOS NÚMEROS -->
-
-            <a
-                class="boton-secundario whatsapp"
-                href="#"
-                target="_blank">
-
-                💬 CONFIRMAR CON PAPÁ
-
-            </a>
-
-
-            <a
-                class="boton-secundario whatsapp"
-                href="#"
-                target="_blank">
-
-                💬 CONFIRMAR CON MAMÁ
-
-            </a>
-
+        <div class="tiempo">
+            <span id="segundos" class="numero">0</span>
+            <span class="texto-tiempo">SEG</span>
         </div>
+    </div>
 
+    <h3 style="margin-bottom: 8px; color:#6d98b1;">📍 LUGAR</h3>
+    <p class="lugar">
+        Urb. La Nueva Florida B3<br>
+        J.L.B. y Rivero
+    </p>
 
-        <button class="atras" onclick="mostrarPantalla(2)">
-            ← Volver
-        </button>
+    <div class="botones">
+        <a class="boton-secundario" href="https://goo.gl/maps/XDfBQam453CLJsAo9?g_st=aw" target="_blank">
+            📍 VER UBICACIÓN
+        </a>
+        
+        <!-- CAMBIA ESTOS NÚMEROS -->
+        <a class="boton-secundario whatsapp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
+            💬 CONFIRMAR CON PAPÁ
+        </a>
+        <a class="boton-secundario whatsapp" href="https://wa.me/51YYYYYYYYY?text=Hola%2C%20confirmo%20asistencia%20al%20Baby%20Shower%20de%20André%20🧸" target="_blank">
+            💬 CONFIRMAR CON MAMÁ
+        </a>
+    </div>
 
-    </section>
+    <button class="atras" onclick="mostrarPantalla(2)">← Volver</button>
+</section>
 
+<script>
+    function mostrarPantalla(numero) {
+        document.querySelectorAll(".pantalla").forEach(p => p.classList.remove("activa"));
+        document.getElementById("pantalla" + numero).classList.add("activa");
+        window.scrollTo(0, 0);
+    }
 
+    // Cuenta regresiva
+    const fechaEvento = new Date("August 29, 2026 10:30:00").getTime();
+    
+    setInterval(function() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaEvento - ahora;
 
-    <!-- ===================================
-         JAVASCRIPT
-    ==================================== -->
-
-    <script>
-
-        function mostrarPantalla(numero) {
-
-            document.querySelectorAll(".pantalla").forEach(function(pantalla) {
-
-                pantalla.classList.remove("activa");
-
-            });
-
-            document
-                .getElementById("pantalla" + numero)
-                .classList.add("activa");
-
-            window.scrollTo(0, 0);
+        if (diferencia <= 0) {
+            document.getElementById("dias").innerText = "0";
+            document.getElementById("horas").innerText = "0";
+            document.getElementById("minutos").innerText = "0";
+            document.getElementById("segundos").innerText = "0";
+            return;
         }
 
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-
-        /* =========================
-           CUENTA REGRESIVA
-        ========================== */
-
-        const fechaEvento = new Date("August 29, 2026 10:30:00").getTime();
-
-
-        setInterval(function() {
-
-            const ahora = new Date().getTime();
-
-            const diferencia = fechaEvento - ahora;
-
-
-            if (diferencia <= 0) {
-
-                document.getElementById("dias").innerText = "0";
-                document.getElementById("horas").innerText = "0";
-                document.getElementById("minutos").innerText = "0";
-                document.getElementById("segundos").innerText = "0";
-
-                return;
-            }
-
-
-            const dias = Math.floor(
-                diferencia / (1000 * 60 * 60 * 24)
-            );
-
-            const horas = Math.floor(
-                (diferencia % (1000 * 60 * 60 * 24))
-                / (1000 * 60 * 60)
-            );
-
-            const minutos = Math.floor(
-                (diferencia % (1000 * 60 * 60))
-                / (1000 * 60)
-            );
-
-            const segundos = Math.floor(
-                (diferencia % (1000 * 60))
-                / 1000
-            );
-
-
-            document.getElementById("dias").innerText = dias;
-
-            document.getElementById("horas").innerText = horas;
-
-            document.getElementById("minutos").innerText = minutos;
-
-            document.getElementById("segundos").innerText = segundos;
-
-        }, 1000);
-
-    </script>
-
+        document.getElementById("dias").innerText = dias;
+        document.getElementById("horas").innerText = horas;
+        document.getElementById("minutos").innerText = minutos;
+        document.getElementById("segundos").innerText = segundos;
+    }, 1000);
+</script>
 </body>
-
 </html>
